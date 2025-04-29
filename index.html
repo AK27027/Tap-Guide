@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Your Tap</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Navigation Bar Styling */
+    nav {
+      background: linear-gradient(90deg, #007BFF, #4CAF50);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+    /* Toggle Button Styling */
+    #theme-toggle {
+      margin-right: 20px;
+      padding: 5px 15px;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #theme-toggle:hover {
+      background-color: white;
+      color: #007BFF;
+    }
+    /* Gradient Heading Styling */
+    h1 {
+      text-align: center;
+      background: linear-gradient(90deg, #007BFF, #4CAF50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5rem;
+      margin-top: 80px;
+    }
+    /* Welcome Text Styling */
+    p#welcome-text {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #333333;
+      margin: 10px 20px;
+      transition: color 0.3s;
+    }
+    body.light-mode p#welcome-text {
+      color: #333333;
+    }
+    body.dark-mode p#welcome-text {
+      color: #DDDDDD;
+    }
+    /* Center the Container */
+    #container {
+      text-align: center;
+      padding: 20px;
+    }
+    #image-area img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="Tap.html">Go to the Step-by-Step Guide</a></li>
+    </ul>
+    <button id="theme-toggle">Toggle Mode</button>
+  </nav>
+
+  <div id="container">
+    <h1>Welcome to Tap Fixing 101</h1>
+    <p id="welcome-text">Follow our easy-to-use guide to master the art of fixing a leaky or faulty tap. Whether you're a beginner or have some experience, you'll find everything you need here!</p>
+    <div id="image-area">
+      <img src="https://www.wikihow.com/images/thumb/0/01/Change-a-Tap-Washer-Step-11.jpg/v4-460px-Change-a-Tap-Washer-Step-11.jpg" alt="Image of a tap" id="tap-image">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('theme-toggle');
+      toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.body.classList.toggle('light-mode');
+      });
+    });
+  </script>
+</body>
+</html>
+
